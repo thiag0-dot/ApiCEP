@@ -14,4 +14,16 @@ switch($url)
         EnderecoController::getLogradouroByBairroAndCidade();
     break;
 
+    case '/cidade/by-uf':
+        EnderecoController::getCidadesByUf();
+    break;
+
+    case '/bairro/by-cidade':
+        EnderecoController::getBairrosByIdCidade();
+    break;
+
+    default:
+        http_response_code(403);
+    break;
+
 }
