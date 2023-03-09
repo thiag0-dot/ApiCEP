@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiCep\Controller;
+namespace APICEP\Controller;
 
 use ApiCep\Model\{ EnderecoModel, CidadeModel};
 use Exception;

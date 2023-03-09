@@ -8,4 +8,4 @@ $cidades = ["jau", "Bariri"];
 
 include 'Controller/Controller.php';
 
-\ApiCep\Controller\Controller::getResponseAsJSON($cidades);
+\APICEP\Controller\Controller::getResponseAsJSON($cidades);

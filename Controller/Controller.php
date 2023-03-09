@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiCep\Controller;
+namespace APICEP\Controller;
 
 abstract class Controller
 {
