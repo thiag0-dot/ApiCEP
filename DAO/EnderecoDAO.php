@@ -1,5 +1,8 @@
 <?php 
 
+namespace APICEP\DAO;
+
+
 class EnderecoDAO extends DAO
 {
     public function __construct()
@@ -44,6 +47,31 @@ class EnderecoDAO extends DAO
         $stmt->bindValue(1, $bairro);
         $stmt->bindValue(2, $id_cidade);
         $stmt->execute();
+
+        return $stmt->fetchAll(DAO::FETCH_CLASS);
+    }
+
+    public function selectBairrosByIdCidade(int $id_cidade)
+    {
+        $sql = "SELECT descricao_bairro
+                FROM logradouro
+                WHERE id_cidade = ?
+                GROUP BY descricao_bairro";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id_cidade);
+        $stmt->execute();
+
+        return $stmt->fetchAll(DAO::FETCH_CLASS);
+    }
+
+    public function selectCepByLogradouro($logradouro)
+    {
+        $sql = "SELECT * FROM logradouro WHERE descricao_sem_numero";
+
+        $stmt = $this->conexao->prepare($sql);
+
+        $stmt->execute(['q:' => "%" . $logradouro . "%"]);
 
         return $stmt->fetchAll(DAO::FETCH_CLASS);
     }
