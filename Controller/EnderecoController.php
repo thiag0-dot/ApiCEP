@@ -3,7 +3,7 @@
 namespace APICEP\Controller;
 
 use APICEP\DAO\EnderecoDAO;
-use ApiCep\Model\{ EnderecoModel, CidadeModel};
+use APICEP\Model\{ EnderecoModel, CidadeModel};
 use Exception;
 
 class EnderecoController extends Controller
